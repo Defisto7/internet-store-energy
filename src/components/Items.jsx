@@ -16,7 +16,7 @@ const Items = ({ item }) => {
     if (sortType === "priceDown") {
       sortedProducts.sort((a, b) => a.price - b.price).reverse();
     } else if (sortType === "rating") {
-      sortedProducts.sort((a, b) => a.price - b.price).reverse();
+      sortedProducts.sort((a, b) => a.rating - b.rating).reverse();
     }
 
     return sortedProducts;

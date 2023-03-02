@@ -14,7 +14,7 @@ const Cart = () => {
         <ItemCart el={el} key={el.id} />
       ))}
       {items.length === 0 ? (
-        <p className="text-white ml-[50px] text-center text-[40px]">
+        <p className="text-white text-center text-[40px]">
           Корзина пустая
         </p>
       ) : (
