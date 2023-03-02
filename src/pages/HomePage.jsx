@@ -16,10 +16,10 @@ const HomePage = () => {
 
       for (const key in responseData) {
         loadedItem.push({
+          id: key,
           image: responseData[key].image,
           title: responseData[key].title,
           price: responseData[key].price,
-          id: responseData[key].id,
           rating: responseData[key].rating,
         });
       }
