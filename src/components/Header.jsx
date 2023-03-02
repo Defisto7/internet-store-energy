@@ -1,4 +1,3 @@
-import React from "react";
 import { FcChargeBattery } from "react-icons/fc";
 import { BsCart4 } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
@@ -11,52 +10,63 @@ const Header = () => {
 
   const { user, logOut } = UserAuth();
   const navigate = useNavigate();
-  console.log(user?.email);
 
   const handleLogout = async () => {
     try {
       await logOut();
-      navigate('/');
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
   };
 
   return (
-    <div className="flex gap-2 p-3 bg-slate-700 text-white justify-between">
+    <div className="flex gap-2 px-3 py-4 bg-[#1d1d1d] text-white justify-between md:text-[18px] text-[12px]">
+      {}
       <Link to="/">
-        <div className="flex gap-2 cursor-pointer">
+        <div className="flex gap-2 cursor-pointer items-center italic">
           <FcChargeBattery size={25} />
           <p>Energy</p>
         </div>
       </Link>
-
-      <Link to="/contacts">Контакты</Link>
+      <Link to="/contacts">
+        <button className="border-green-600 border px-2 py-1 rounded cursor-pointer">
+          Контакты
+        </button>
+      </Link>
       {user?.email ? (
         <div>
+          <Link to="/account">
+            <button className="border-amber-600 border px-2 py-1 rounded cursor-pointer mr-2">
+              Личный кабинет
+            </button>
+          </Link>
           <button
             onClick={handleLogout}
-            className='bg-red-600 px-6 py-2 rounded cursor-pointer text-white'
+            className="border-red-600 border px-3 py-1 rounded cursor-pointe"
           >
-            Logout
+            Выход
           </button>
         </div>
       ) : (
         <div>
-          <Link to='/login'>
-            <button className='text-white pr-4'>Sign In</button>
+          <Link to="/login">
+            <button className="border-green-600 border px-2 py-1 rounded cursor-pointer mr-4">
+              Вход
+            </button>
           </Link>
-          <Link to='/signup'>
-            <button className='bg-red-600 px-6 py-2 rounded cursor-pointer text-white'>
-              Sign Up
+          <Link to="/signup">
+            <button className="border-amber-300 border px-2 py-1 rounded cursor-pointer">
+              Регистрация
             </button>
           </Link>
         </div>
       )}
-      <Link to="/cart" className="flex gap-2">
-        <BsCart4 size={25} />
-        {totalPrice}
-        <p>Корзина</p>
+      <Link to="/cart">
+        <button className="flex  gap-5 border-green-800 border px-2 py-1 rounded cursor-pointer text-center">
+          <BsCart4 size={20} className="mt-[2px]" />
+          {totalPrice === 0 ? "" : `${totalPrice} ₴`}
+        </button>
       </Link>
     </div>
   );

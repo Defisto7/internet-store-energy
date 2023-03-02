@@ -1,7 +1,6 @@
 import React from "react";
 
 const ItemCart = ({ el }) => {
-
   return (
     <div>
       <div>

@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react";
 
 const Contacts = () => {
   return (
-    <div className='text-white text-center leading-[50px]'>
+    <div className="text-white text-center leading-[50px]">
       <ul>
         <li>
           <h2>Location</h2>
@@ -26,7 +26,7 @@ const Contacts = () => {
         </li>
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default Contacts
+export default Contacts;

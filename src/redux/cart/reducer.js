@@ -10,11 +10,13 @@ const cartSlise = createSlice({
       state.itemsInCart.push(action.payload);
     },
     deleteItemFromCart: (state, action) => {
-        state.itemsInCart = state.itemsInCart.filter(item => item.id !== action.payload)
-    }
+      state.itemsInCart = state.itemsInCart.filter(
+        (item) => item.id !== action.payload
+      );
+    },
   },
 });
 
-export const { setItemInCart, deleteItemFromCart} = cartSlise.actions
+export const { setItemInCart, deleteItemFromCart } = cartSlise.actions;
 
 export default cartSlise.reducer;
