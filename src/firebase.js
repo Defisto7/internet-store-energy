@@ -1,14 +1,15 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
+
 const firebaseConfig = {
-  apiKey: "AIzaSyBUSC5XI4UXENpRPbN2PP0s_8kI5lVLmD8",
-  authDomain: "internet-store-energy.firebaseapp.com",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER,
+  appId: process.env.REACT_APP_APP_ID,
   databaseURL: "https://internet-store-energy-default-rtdb.firebaseio.com",
-  projectId: "internet-store-energy",
-  storageBucket: "internet-store-energy.appspot.com",
-  messagingSenderId: "882158962628",
-  appId: "1:882158962628:web:6f90d9f9d1c37a52f98691",
 };
 
 export const app = initializeApp(firebaseConfig);
